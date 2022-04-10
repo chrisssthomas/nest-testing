@@ -2,13 +2,12 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
     UsersModule,
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -20,6 +19,5 @@ import { ConfigModule } from '@nestjs/config';
     }),
   ],
   providers: [AppService],
-  controllers: [AppController],
 })
 export class AppModule {}

@@ -3,10 +3,5 @@ import { Injectable, ConflictException } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  constructor() {
-    //
-  }
-  async getUsers(): Promise<User[]> {
-    throw new ConflictException();
-  }
+  constructor() {}
 }
